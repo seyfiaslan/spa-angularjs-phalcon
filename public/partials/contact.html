@@ -1,0 +1,20 @@
+<!-- contact.html -->
+<div ng-controller="contactController">
+    <h2>Contact Page</h2>
+
+    <form role="form" ng-submit="send()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" ng-model="name" class="form-control" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" ng-model="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="message">Your message</label>
+            <textarea id="message" ng-model="message" class="form-control" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Send</button>
+    </form>
+</div>

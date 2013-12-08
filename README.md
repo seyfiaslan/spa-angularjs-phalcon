@@ -7,7 +7,9 @@ Branch -master is an empty boilerplate
 
 To start code
 1. Install Phalcon Framework in http://phalconphp.com/en/download
+
 2. Copy paste virtual host definition in vhost-example under files directory or below
+
 <VirtualHost *:80>
         DocumentRoot "/var/www/spa_angular/public"
         ServerName spa_angular
@@ -29,6 +31,7 @@ To start code
             RewriteRule ^api/(.*)$ api/index.php?_url=/$1 [QSA,L]
         </Directory>
 </VirtualHost>
+
 3. Clone repository
 
 Dependencies

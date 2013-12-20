@@ -3,7 +3,7 @@
  */
 
 // create the module with a name and include route and controllers
-var app = angular.module('app', ['ngRoute', 'appControllers', 'ngResource']);
+var app = angular.module('app', ['ngRoute', 'appControllers']);
 
 // configure routes
 app.config(function ($routeProvider) {
@@ -34,18 +34,11 @@ app.controller('aboutController', function ($scope) {
     $scope.title = 'This is about page';
 });
 
-app.controller('contactController', ['$scope', '$resource', function ($scope, $resource) {
+app.controller('contactController', ['$scope', function ($scope) {
     /* define function  */
     $scope.send = function () {
         /* json data to be sent */
         var data = {'name': $scope.name, 'email': $scope.email, 'message': $scope.message};
-        /* define $resource module with link */
-        var contact = $resource('/api/contact', {}, {});
-        var response = contact.save({}, data);
-        $scope.name = "";
-        $scope.email = "";
-        $scope.message = "";
-
-
+        console.log(data);
     }
 }]);

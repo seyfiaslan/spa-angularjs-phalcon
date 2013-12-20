@@ -34,11 +34,11 @@ app.controller('aboutController', function ($scope) {
     $scope.title = 'This is about page';
 });
 
-app.controller('contactController', ['$scope', function ($scope) {
+app.controller('contactController', function ($scope) {
     /* define function  */
     $scope.send = function () {
         /* json data to be sent */
         var data = {'name': $scope.name, 'email': $scope.email, 'message': $scope.message};
         console.log(data);
     }
-}]);
+});

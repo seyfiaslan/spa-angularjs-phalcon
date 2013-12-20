@@ -25,17 +25,21 @@ app.config(function ($routeProvider) {
 var appControllers = angular.module('appControllers', []);
 
 app.controller('mainController', function ($scope) {
-    $scope.message = 'This is main page';
+    /* passing variable to view */
+    $scope.title = 'This is main page';
 });
 
 app.controller('aboutController', function ($scope) {
-    $scope.message = 'This is about page';
+    /* passing variable to view */
+    $scope.title = 'This is about page';
 });
 
 app.controller('contactController', ['$scope', '$resource', function ($scope, $resource) {
-
+    /* define function  */
     $scope.send = function () {
+        /* json data to be sent */
         var data = {'name': $scope.name, 'email': $scope.email, 'message': $scope.message};
+        /* define $resource module with link */
         var contact = $resource('/api/contact', {}, {});
         var response = contact.save({}, data);
         $scope.name = "";

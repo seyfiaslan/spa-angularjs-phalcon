@@ -12,6 +12,5 @@ To start code<br />
 
 
 Dependencies<br />
-Phalcon microframework - http://phalconphp.com/en/download <br />
 AngularJS - http://angularjs.org
 

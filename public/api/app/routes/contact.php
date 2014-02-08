@@ -19,7 +19,7 @@ $app->post('/contact', function () use ($app) {
     if (count($item->getMessages()) > 0) {
         $response->setStatusCode("406","Something went wrong");
     } else {
-        $response->setContent("Successfully sent.");
+        $response->setStatusCode("200","OK");
     }
     return $response;
 

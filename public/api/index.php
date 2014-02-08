@@ -8,7 +8,7 @@
 $loader = new \Phalcon\Loader();
 $loader->registerDirs(array(
     __DIR__ . '/app/model',
-    __DIR__ . '/app/library'
+    __DIR__ . '/app/routes'
 ))->register();
 $app = new Phalcon\Mvc\Micro();
 
@@ -23,10 +23,7 @@ $app['db'] = function() {
         "dbname" => "acme"
     ));
 };
-
-
 $app->get('/', function () {
     echo "<h1>This is root</h1>";
 });
-include __DIR__ . "/app/routes/contact.php";
 $app->handle();

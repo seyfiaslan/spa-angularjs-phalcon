@@ -37,11 +37,11 @@ app.controller('contactController', ['$scope', '$resource', function ($scope, $r
     $scope.send = function () {
         var data = {'name': $scope.name, 'email': $scope.email, 'message': $scope.message};
         var contact = $resource('/api/contact', {}, {});
-        var response = contact.save({}, data);
-        $scope.name = "";
-        $scope.email = "";
-        $scope.message = "";
-
-
+        contact.save(data, function () {
+            $scope.name = "";
+            $scope.email = "";
+            $scope.message = "";
+            alert("Succesfully sent!");
+        });
     }
 }]);

@@ -7,8 +7,7 @@
  */
 $loader = new \Phalcon\Loader();
 $loader->registerDirs(array(
-    __DIR__ . '/app/model',
-    __DIR__ . '/app/routes'
+    __DIR__ . '/app/model'
 ))->register();
 $app = new Phalcon\Mvc\Micro();
 
@@ -26,4 +25,5 @@ $app['db'] = function() {
 $app->get('/', function () {
     echo "<h1>This is root</h1>";
 });
+include __DIR__ . "/app/routes/contact.php";
 $app->handle();
